@@ -2,6 +2,7 @@ import {Outlet,useLocation,useNavigate} from 'react-router-dom';   //outlet for 
 import React,{useEffect} from 'react'                              //useLocation for getting pathlocation,usenavigate to navigate programmtically
 import {LOGIN} from "../../lib/routes";
 import {useAuth} from "../../hooks/auth";
+import Navbar from "../navbar/index";
 
 const Layout = () => {
 
@@ -12,7 +13,7 @@ const Layout = () => {
 
 
     useEffect(()=>{
-      if(pathname.startsWith('/protected') && !user) {
+      if(!isLoading && pathname.startsWith('/protected') && !user) {
         navigate(LOGIN);
       }
     },[pathname]);
@@ -21,7 +22,10 @@ const Layout = () => {
 
 
   return (
-    <div>This is the string: <Outlet/></div>
+    <div>
+      <Navbar/>
+      <Outlet/>
+      </div>
   )
 }
 
