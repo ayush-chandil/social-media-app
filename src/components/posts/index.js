@@ -13,7 +13,7 @@ export default function Post({ post }) {
                 <Header post={post} />
 
                 <Box p="2" minH="100px">
-                    <Text wordBreak="break-word" font-size="md">
+                    <Text wordBreak="break-word" fontSize="md">
                         {text}
                     </Text>
                 </Box>

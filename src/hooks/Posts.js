@@ -3,7 +3,7 @@ import { uuidv4 } from '@firebase/util';
 import { arrayRemove, arrayUnion, collection, doc, updateDoc,setDoc,where} from "firebase/firestore";
 import { db } from "../lib/Firebase";
 import {useToast} from "@chakra-ui/react";
-import {useCollectionData} from "react-firebase-hooks/firestore";
+import {useCollectionData, useDocumentData} from "react-firebase-hooks/firestore";
 import { query,orderBy} from "firebase/firestore";
 
 
@@ -66,4 +66,12 @@ export function usePosts(uid=null){
       }
   
      return {toggleLike,isLoading}; 
+ }
+
+
+ export function usePost(id){
+     const q=query(doc(db,"posts",id));
+     const [post,isLoading]=useDocumentData(q);
+     
+     return {post,isLoading};
  }
