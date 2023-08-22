@@ -1,6 +1,6 @@
-import { useDocumentData } from "react-firebase-hooks/firestore";
+import { useCollectionData, useDocumentData } from "react-firebase-hooks/firestore";
 import {db} from "../lib/Firebase";
-import {doc,query} from "firebase/firestore";
+import {collection, doc,query} from "firebase/firestore";
 
 
 
@@ -11,3 +11,8 @@ export function useUser(id){
     return {user,isLoading};
 }
 
+export function useUsers(){
+    const [users,isLoading]=useCollectionData(collection(db,"users"));
+
+    return {users,isLoading};
+}
