@@ -1,7 +1,7 @@
 import { useAuthState, useSignOut } from 'react-firebase-hooks/auth';
 import { auth, db } from '../lib/Firebase';
 import { useEffect, useState } from 'react';
-import { DASHBOARD, LOGIN } from '../lib/routes';
+import { DASHBOARD, LOGIN} from '../lib/routes';
 import { setDoc, doc, getDoc } from "firebase/firestore";
 import { signInWithEmailAndPassword, createUserWithEmailAndPassword} from 'firebase/auth';
 import { useToast } from '@chakra-ui/react';

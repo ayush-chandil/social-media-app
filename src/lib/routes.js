@@ -7,6 +7,7 @@ import Dashboard from "../components/dashboard/index";
 import Comments from "../components/comments/index";
 import Profile from "../components/profile/index";
 import Users from "../components/user/index";
+import Root from "../components/root";
 
 
 export const ROOT = "/";
@@ -20,7 +21,7 @@ export const COMMENTS= "/protected/comments/:id";
 
 
 export const router = createBrowserRouter([
-  { path: ROOT, element: "Public Root" },
+  { path: ROOT, element: <Root/>},
   { path: LOGIN, element: <Login /> },
   { path: REGISTER, element: <Register /> },
   {

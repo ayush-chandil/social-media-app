@@ -1,7 +1,7 @@
 import { Outlet, useLocation, useNavigate } from 'react-router-dom';   //outlet for rendering child routes, 
 import React, { useEffect } from 'react'
 import { Flex, Box } from '@chakra-ui/react';                           //useLocation for getting pathlocation,usenavigate to navigate programmtically
-import { LOGIN } from "../../lib/routes";
+import { LOGIN} from "../../lib/routes";
 import { useAuth } from "../../hooks/auth";
 import Navbar from "./Navbar";
 import Sidebar from "./Sidebar";
